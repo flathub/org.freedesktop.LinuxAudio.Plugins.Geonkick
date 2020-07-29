@@ -66,7 +66,7 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DCMAKE_INSTALL_PREFIX=/app/extensions/Plugins/Geonkick",
-                "-DCMAKE_INSTALL_LIBDIR=/app/extensions/Plugins/Geonkick/lib",
+                "-DCMAKE_INSTALL_LIBDIR=.",
                 "-DGKICK_STANDALONE=NO"
             ],
             "build-options": {
@@ -82,8 +82,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.3.2.tar.gz",
-                    "sha256": "8952ac8497d6b238befa91391155b8bd1f9ef8bf41452f15a34a36a3417aea39"
+                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.3.3.tar.gz",
+                    "sha256": "251d3f1c41e61b89ff925c3d2fe38dbf3a57672984612db53d611bcee4b59a98"
                 },
                 {
                     "type": "patch",
