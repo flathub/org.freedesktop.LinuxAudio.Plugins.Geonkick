@@ -1,6 +1,6 @@
 --- a/plugin/lv2/CMakeLists.txt	2020-05-13 13:19:31.000000000 -0400
 +++ b/plugin/lv2/CMakeLists.txt	2020-05-24 16:45:05.138976427 -0400
-@@ -6,9 +6,8 @@
+@@ -6,7 +6,6 @@
    ${GKICK_LV2_SOURCES})
  
  target_link_libraries(geonkick_lv2  geonkick_common api_plugin)
@@ -8,20 +8,3 @@
  target_link_libraries(geonkick_lv2 "-lredkite -lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
  add_dependencies(geonkick_lv2 api_plugin)
  
--install(DIRECTORY ${GKICK_LV2_DIR}/geonkick.lv2 DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/lv2)
--install(TARGETS geonkick_lv2 DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/lv2/geonkick.lv2)
-+install(DIRECTORY ${GKICK_LV2_DIR}/geonkick.lv2 DESTINATION ${CMAKE_INSTALL_PREFIX}/lv2)
-+install(TARGETS geonkick_lv2 DESTINATION ${CMAKE_INSTALL_PREFIX}/lv2/geonkick.lv2)
-diff --git a/src/percussion_state.cpp b/src/percussion_state.cpp
-index d77f7ce..fbef3b1 100644
---- a/src/percussion_state.cpp
-+++ b/src/percussion_state.cpp
-@@ -30,7 +30,7 @@ PercussionState::PercussionState()
-         : appVersion{GEONKICK_VERSION}
-         , kickId{0}
-         , kickName{"Default"}
--        , playingKey{-1}
-+        , playingKey{(char)-1}
-         , outputChannel{0}
-         , kickEnabled{true}
-         , percussionMuted{false}
