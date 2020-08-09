@@ -33,8 +33,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iurie-sw/redkite/archive/v1.0.1.tar.gz",
-                    "sha256": "d868c467334ef28bf50d6b2e8f126e8b0e8d1df158d258faa86942b2426ff25d"
+                    "url": "https://github.com/iurie-sw/redkite/archive/v1.0.2.tar.gz",
+                    "sha256": "e28c4fdb410f0ed1666aadeefde1a148a2d128073cb052ad1c61ce0fe8bf01d3"
                 }
             ]
         },
