@@ -82,8 +82,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.3.5.tar.gz",
-                    "sha256": "bd8e0c171e162076ec09c910a4e7376f517216d60024581b05fdf65b71c2ba5e"
+                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.3.6.tar.gz",
+                    "sha256": "2838ebcecf2dcfc243697860a282c515749171d9c5e8280e4eb22b84e98ff899"
                 },
                 {
                     "type": "patch",
