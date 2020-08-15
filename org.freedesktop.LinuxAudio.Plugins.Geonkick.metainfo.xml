@@ -9,6 +9,20 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2020-08-14" version="2.3.6">
+      <url>https://github.com/iurie-sw/geonkick/releases/tag/v2.3.6</url>
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Fix updating kit UI when selecting a preset from host.</li>
+          <li>Fix some compile warnings in the vst plugin.</li>
+        </ul>
+        <p>Other</p>
+        <ul>
+          <li>Remove old presets.</li>
+        </ul>
+      </description>
+    </release>
     <release date="2020-08-13" version="2.3.5">
       <url>https://github.com/iurie-sw/geonkick/releases/tag/v2.3.5</url>
       <description>
