@@ -9,6 +9,12 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2020-09-22" version="2.3.8">
+      <description>
+        <p>Fixes the looped continuous sound that is generated on some
+        hosts (LV2 and VST3)</p>
+      </description>
+    </release>
     <release date="2020-08-18" version="2.3.7" />
     <release date="2020-08-14" version="2.3.6">
       <url>https://github.com/iurie-sw/geonkick/releases/tag/v2.3.6</url>
