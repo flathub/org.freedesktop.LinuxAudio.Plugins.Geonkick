@@ -9,6 +9,24 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2020-10-26" version="2.4.0">
+      <description>
+        <p>Features:</p>
+        <ul>
+          <li>sample browser with sample preview</li>
+          <li>save/restore the last visited path, also save UI visual
+          state</li>
+          <li>loaded sample is amplified</li>
+          <li>pitch shift (+- 48 semitones) envelope for oscillator
+          when it uses a sample</li>
+          <li>added sound level indication for kit mixer</li>
+          <li>UI updates, switch between envelopes is more easy,
+          removed the envelopes menu</li>
+          <li>option to scale the UI by factor of 2 for so-called
+          HiDPI cases (Left Ctrl + f)</li>
+        </ul>
+      </description>
+    </release>
     <release date="2020-09-22" version="2.3.8">
       <description>
         <p>Fixes the looped continuous sound that is generated on some
