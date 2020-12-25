@@ -9,6 +9,14 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2020-12-25" version="2.6.1">
+      <description>
+        <ul>
+          <li>Fix potential race condition</li>
+          <li>Remove lib prefix for plugin shared library</li>
+        </ul>
+      </description>
+    </release>
     <release date="2020-12-16" version="2.6.0">
       <description>
         <ul>
