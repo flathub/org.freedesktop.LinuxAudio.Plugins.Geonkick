@@ -33,8 +33,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iurie-sw/redkite/archive/v1.3.0.tar.gz",
-                    "sha256": "f43fc88c18e4231a87b55f82c1f657188b435de425877706b788adf2f63f94e1"
+                    "url": "https://github.com/iurie-sw/redkite/archive/v1.3.1.tar.gz",
+                    "sha256": "18f2e3808201e350624279db6553baf53113a7351d80edc3604dccfc32a68e67"
                 }
             ]
         },
@@ -82,8 +82,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.7.0.tar.gz",
-                    "sha256": "c333da9f8db3eb71519a8920e8cc05525754c3a71f9c68ae16b55690d03fb9d4"
+                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.7.1.tar.gz",
+                    "sha256": "e824bd984cc4e3f795a41c71ae22a61e544b06847d90eb64fce389d98683bce2"
                 },
                 {
                     "type": "patch",
