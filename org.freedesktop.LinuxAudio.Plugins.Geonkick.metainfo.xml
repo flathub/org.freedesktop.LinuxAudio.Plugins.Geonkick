@@ -9,6 +9,11 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2021-02-28" version="2.7.2">
+      <description>
+        <p>Show Geonkick version in the UI</p>
+      </description>
+    </release>
     <release date="2021-02-27" version="2.7.1">
       <description>
         <p>Add scale factor 1.5x for UI</p>
