@@ -18,27 +18,6 @@
     "modules": [
         "shared-modules/linux-audio/lv2.json",
         {
-            "name": "redkite",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_INSTALL_PREFIX=/app/extensions/Plugins/Geonkick",
-                "-DCMAKE_INSTALL_LIBDIR=/app/extensions/Plugins/Geonkick/lib"
-            ],
-            "cleanup": [
-                "/bin",
-                "/lib",
-                "/share/man",
-                "/include"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/iurie-sw/redkite/archive/v1.3.1.tar.gz",
-                    "sha256": "18f2e3808201e350624279db6553baf53113a7351d80edc3604dccfc32a68e67"
-                }
-            ]
-        },
-        {
             "name": "rapidjson",
             "buildsystem": "cmake-ninja",
             "config-opts": [
@@ -82,8 +61,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.7.2.tar.gz",
-                    "sha256": "ee4afd97657620ffdcae34192c1d51953059b79d382bc4f165252085b6e24010"
+                    "url": "https://github.com/iurie-sw/geonkick/archive/v2.7.3.tar.gz",
+                    "sha256": "c26d7ac7f01f649ffcc2f78a1589f696c3b78b66b7df31543a7bdcf0388cac3f"
                 },
                 {
                     "type": "patch",
