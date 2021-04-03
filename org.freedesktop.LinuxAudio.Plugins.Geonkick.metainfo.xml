@@ -9,8 +9,23 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2021-04-03" version="2.8.0">
+      <description>
+        <p><b>Fixes</b></p>
+        <ul>
+          <li>Fix crash when opening multiple GUI for LV2</li>
+          <li>Find rapidjson when configuring at build</li>
+          <li>Add musl compatibility patch (Teldra /
+          @teldra@likeable.space)</li>
+        </ul>
+        <p><b>Features</b></p>
+        <ul>
+          <li>Add limiter to samples preview</li>
+        </ul>
+      </description>
+    </release>
     <release date="2021-03-09" version="2.7.3">
-      <release>
+      <description>
         <ul>
           <li>Fix selection of the last MIDI column in the MIDI key
           popup</li>
@@ -18,7 +33,7 @@
           integrate it in the build system (no need to install Redkite
           now to build Geonkick)</li>
         </ul>
-      </release>
+      </description>
     </release>
     <release date="2021-02-28" version="2.7.2">
       <description>
