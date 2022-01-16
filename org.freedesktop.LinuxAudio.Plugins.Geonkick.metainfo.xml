@@ -9,6 +9,11 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2022-01-16" version="2.8.1">
+      <description>
+        <p>Remove redundant lock in the DSP worker</p>
+      </description>
+    </release>
     <release date="2021-04-03" version="2.8.0">
       <description>
         <p><b>Fixes</b></p>
