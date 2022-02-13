@@ -9,6 +9,11 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2022-05-14" version="2.9.1">
+      <description>
+        <p>Fix crash in Reaper for LV2.</p>
+      </description>
+    </release>
     <release date="2022-02-13" version="2.9.0">
       <description>
         <p>Features</p>
