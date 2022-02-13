@@ -9,6 +9,28 @@
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
   <releases>
+    <release date="2022-02-13" version="2.9.0">
+      <description>
+        <p>Features</p>
+        <ul>
+          <li>bring back VST3 plugin</li>
+          <li>support the session sample rate for VST3 plugin</li>
+          <li>integrated VST3 SDK into Geonkick build by providing the
+          library into the 3rdparty directory</li>
+        </ul>
+        <p>Fixes</p>
+        <ul>
+          <li>export ModuleEntry/ModuleExit symbols for VST3 SDK</li>
+          <li>don't try to build standalone if there is no libjack dev
+          library installed</li>
+          <li>fix a potential crash if the GUI graph thread was not
+          created</li>
+          <li>for LV2 plugin tell the host that there is required
+          ui:parent and ui:resize features (manifest file
+          changes)</li>
+          </ul>
+      </description>
+    </release>
     <release date="2022-01-16" version="2.8.1">
       <description>
         <p>Remove redundant lock in the DSP worker</p>

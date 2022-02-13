@@ -42,11 +42,13 @@
         {
             "name": "geonkick",
             "buildsystem": "cmake-ninja",
+            "builddir": true,
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DCMAKE_INSTALL_PREFIX=/app/extensions/Plugins/Geonkick",
                 "-DCMAKE_INSTALL_LIBDIR=.",
-                "-DGKICK_STANDALONE=NO"
+                "-DGKICK_STANDALONE=NO",
+                "-DGKICK_VST3=ON"
             ],
             "build-options": {
                 "cxxflags": "-I/app/extensions/Plugins/Geonkick/include",
@@ -54,15 +56,16 @@
             },
             "post-install": [
                 "strip ${FLATPAK_DEST}/lv2/*.lv2/*.so",
-                "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo org.freedesktop.LinuxAudio.Plugins.Geonkick.metainfo.xml",
+                "strip ${FLATPAK_DEST}/vst3/*.vst3/Contents/*-linux/*.so",
+                "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ../org.freedesktop.LinuxAudio.Plugins.Geonkick.metainfo.xml",
                 "appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.Geonkick --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.LinuxAudio.Plugins.Geonkick",
-                "install -Dm644 -t $FLATPAK_DEST/share/licenses/geonkick LICENSE"
+                "install -Dm644 -t $FLATPAK_DEST/share/licenses/geonkick ../LICENSE"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.8.1.tar.gz",
-                    "sha256": "813fb10709136ed79403c8baf3d847fce9fbf717fea3c194ad2952e0172e6d45"
+                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.9.0.tar.gz",
+                    "sha256": "54968894e3fab1ad1b7a92e12cdb5041ca39a22842c8e815a443f50cbcc4dc5b"
                 },
                 {
                     "type": "patch",

@@ -18,3 +18,34 @@ index 55c58ce..0d1dc61 100644
    target_link_libraries(geonkick_single_lv2 "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
    add_dependencies(geonkick_single_lv2 api_plugin_single)
    target_compile_options(geonkick_single_lv2 PUBLIC ${GKICK_API_PLUGIN_SINGLE_FLAGS})
+--- a/plugin/vst/CMakeLists.txt	2022-02-13 12:03:09.580062273 -0500
++++ b/plugin/vst/CMakeLists.txt	2022-02-13 12:03:20.559169544 -0500
+@@ -32,7 +32,6 @@
+ set_target_properties(${target} PROPERTIES SUFFIX ".so")
+ 
+ target_link_libraries(${target} PRIVATE geonkick_common api_plugin)
+-target_link_libraries(${target} PRIVATE "-lstdc++fs")
+ target_link_libraries(${target} PRIVATE base sdk sdk_common pluginterfaces)
+ target_link_libraries(${target} PRIVATE "-lredkite -lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ target_link_libraries(${target} PRIVATE "-Wl,--no-undefined")
+--- a/standalone/CMakeLists.txt	2022-02-13 12:05:57.925707046 -0500
++++ b/standalone/CMakeLists.txt	2022-02-13 12:06:04.091767291 -0500
+@@ -8,7 +8,6 @@
+ add_dependencies(geonkick api_standalone)
+ add_dependencies(geonkick redkite)
+ target_link_libraries(geonkick  geonkick_common api_standalone redkite)
+-target_link_libraries(geonkick "-lstdc++fs")
+ target_link_libraries(geonkick "-lX11 -ljack -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ 
+ install(TARGETS geonkick DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+--- a/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake	2022-02-13 12:08:21.826113000 -0500
++++ b/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake	2022-02-13 12:08:32.148213851 -0500
+@@ -60,7 +60,7 @@
+                     set(CMAKE_ANDROID_STL_TYPE c++_static)
+                     link_libraries(dl)
+                  else()
+-                    link_libraries(stdc++fs pthread dl)
++                    link_libraries(pthread dl)
+                 endif(ANDROID)
+             endif(SMTG_MAC)
+         endif(XCODE)
