@@ -64,8 +64,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.9.0.tar.gz",
-                    "sha256": "54968894e3fab1ad1b7a92e12cdb5041ca39a22842c8e815a443f50cbcc4dc5b"
+                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.9.1.tar.gz",
+                    "sha256": "30ee2a36a26cabb9af8f458bb12d7b0358b4d6abec67ab5f8df696390b5699b4"
                 },
                 {
                     "type": "patch",
