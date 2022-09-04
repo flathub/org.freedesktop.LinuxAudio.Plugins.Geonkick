@@ -1,5 +1,40 @@
+diff --git a/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake b/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake
+index 49ff3102..c4239bf2 100644
+--- a/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake
++++ b/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake
+@@ -60,7 +60,7 @@ macro(smtg_setup_platform_toolset)
+                     set(CMAKE_ANDROID_STL_TYPE c++_static)
+                     link_libraries(dl)
+                  else()
+-                    link_libraries(stdc++fs pthread dl)
++                    link_libraries(pthread dl)
+                 endif(ANDROID)
+             endif(SMTG_MAC)
+         endif(XCODE)
+diff --git a/3rdparty/vst3_sdk/pluginterfaces/base/funknown.cpp b/3rdparty/vst3_sdk/pluginterfaces/base/funknown.cpp
+index 23ca64e6..a7c24c60 100644
+--- a/3rdparty/vst3_sdk/pluginterfaces/base/funknown.cpp
++++ b/3rdparty/vst3_sdk/pluginterfaces/base/funknown.cpp
+@@ -59,6 +59,8 @@
+ #include <stdatomic.h>
+ #endif
+ 
++#include <atomic>
++
+ namespace Steinberg {
+ 
+ //------------------------------------------------------------------------
+@@ -88,7 +90,7 @@ namespace FUnknownPrivate {
+ int32 PLUGIN_API atomicAdd (int32& var, int32 d)
+ {
+ #if SMTG_USE_STDATOMIC_H
+-	return atomic_fetch_add (reinterpret_cast<atomic_int_least32_t*> (&var), d) + d;
++	return atomic_fetch_add (reinterpret_cast<std::atomic_int_least32_t*> (&var), d) + d;
+ #else
+ #if SMTG_OS_WINDOWS
+ #ifdef __MINGW32__
 diff --git a/plugin/lv2/CMakeLists.txt b/plugin/lv2/CMakeLists.txt
-index 55c58ce..0d1dc61 100644
+index 55c58ce6..0d1dc617 100644
 --- a/plugin/lv2/CMakeLists.txt
 +++ b/plugin/lv2/CMakeLists.txt
 @@ -7,7 +7,6 @@ add_library(geonkick_lv2 SHARED
@@ -18,9 +53,11 @@ index 55c58ce..0d1dc61 100644
    target_link_libraries(geonkick_single_lv2 "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
    add_dependencies(geonkick_single_lv2 api_plugin_single)
    target_compile_options(geonkick_single_lv2 PUBLIC ${GKICK_API_PLUGIN_SINGLE_FLAGS})
---- a/plugin/vst/CMakeLists.txt	2022-02-13 12:03:09.580062273 -0500
-+++ b/plugin/vst/CMakeLists.txt	2022-02-13 12:03:20.559169544 -0500
-@@ -32,7 +32,6 @@
+diff --git a/plugin/vst/CMakeLists.txt b/plugin/vst/CMakeLists.txt
+index 222fe9d6..3fc4ae33 100644
+--- a/plugin/vst/CMakeLists.txt
++++ b/plugin/vst/CMakeLists.txt
+@@ -32,7 +32,6 @@ set_target_properties(${target} PROPERTIES OUTPUT_NAME "Geonkick")
  set_target_properties(${target} PROPERTIES SUFFIX ".so")
  
  target_link_libraries(${target} PRIVATE geonkick_common api_plugin)
@@ -28,9 +65,11 @@ index 55c58ce..0d1dc61 100644
  target_link_libraries(${target} PRIVATE base sdk sdk_common pluginterfaces)
  target_link_libraries(${target} PRIVATE "-lredkite -lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
  target_link_libraries(${target} PRIVATE "-Wl,--no-undefined")
---- a/standalone/CMakeLists.txt	2022-02-13 12:05:57.925707046 -0500
-+++ b/standalone/CMakeLists.txt	2022-02-13 12:06:04.091767291 -0500
-@@ -8,7 +8,6 @@
+diff --git a/standalone/CMakeLists.txt b/standalone/CMakeLists.txt
+index 6bc75c94..ea9af846 100644
+--- a/standalone/CMakeLists.txt
++++ b/standalone/CMakeLists.txt
+@@ -8,7 +8,6 @@ add_executable(geonkick
  add_dependencies(geonkick api_standalone)
  add_dependencies(geonkick redkite)
  target_link_libraries(geonkick  geonkick_common api_standalone redkite)
@@ -38,14 +77,3 @@ index 55c58ce..0d1dc61 100644
  target_link_libraries(geonkick "-lX11 -ljack -lsndfile -lrt -lm -ldl -lpthread -lcairo")
  
  install(TARGETS geonkick DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
---- a/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake	2022-02-13 12:08:21.826113000 -0500
-+++ b/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake	2022-02-13 12:08:32.148213851 -0500
-@@ -60,7 +60,7 @@
-                     set(CMAKE_ANDROID_STL_TYPE c++_static)
-                     link_libraries(dl)
-                  else()
--                    link_libraries(stdc++fs pthread dl)
-+                    link_libraries(pthread dl)
-                 endif(ANDROID)
-             endif(SMTG_MAC)
-         endif(XCODE)
