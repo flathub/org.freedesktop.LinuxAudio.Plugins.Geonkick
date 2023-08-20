@@ -52,20 +52,20 @@
             ],
             "build-options": {
                 "cxxflags": "-I/app/extensions/Plugins/Geonkick/include",
-                "ldflags": "-L/app/extensions/Plugins/Geonkick/lib"
+                "ldflags": "-L/app/extensions/Plugins/Geonkick/lib -L/run/build/geonkick/_flatpak_build/3rdparty/redkite"
             },
             "post-install": [
                 "strip ${FLATPAK_DEST}/lv2/*.lv2/*.so",
                 "strip ${FLATPAK_DEST}/vst3/*.vst3/Contents/*-linux/*.so",
-                "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ../org.freedesktop.LinuxAudio.Plugins.Geonkick.metainfo.xml",
-                "appstream-compose --basename=org.freedesktop.LinuxAudio.Plugins.Geonkick --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.LinuxAudio.Plugins.Geonkick",
+                "install -Dm644 ../org.freedesktop.LinuxAudio.Plugins.Geonkick.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
+                "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/geonkick ../LICENSE"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.9.1.tar.gz",
-                    "sha256": "30ee2a36a26cabb9af8f458bb12d7b0358b4d6abec67ab5f8df696390b5699b4"
+                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.9.2.tar.gz",
+                    "sha256": "704225047c3b24b724adf49a990688f0e15aff0c21e0c4a938a611a668ece8d1"
                 },
                 {
                     "type": "patch",
