@@ -16,6 +16,25 @@
     </p>
   </description>
   <releases>
+    <release date="2023-09-08" version="2.10">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>fix linking VST3 against wrong Redkite library path</li>
+          <li>fix conversion from frequency to note (more fixes)</li>
+          <li>fix shortcut for hide/show envelope</li>
+        </ul>
+        <p>New features</p>
+        <ul>
+          <li>set manually the exact value of envelope points</li>
+          <li>display the current envelope point coordinates (value, time)</li>
+        </ul>
+        <p>Improvements</p>
+        <ul>
+          <li>improve the precision for saving into presets</li>
+        </ul>
+      </description>
+    </release>
     <release date="2023-08-20" version="2.9.2">
       <description>
         <p>(UI) Fix conversion from frequency to note in the frequency envelope graph.</p>
