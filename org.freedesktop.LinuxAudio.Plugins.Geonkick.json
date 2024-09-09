@@ -48,7 +48,7 @@
                 "-DCMAKE_INSTALL_PREFIX=/app/extensions/Plugins/Geonkick",
                 "-DCMAKE_INSTALL_LIBDIR=.",
                 "-DGKICK_STANDALONE=NO",
-                "-DGKICK_VST3=ON"
+                "-DVST3_SDK_PATH=/run/build/geonkick/vst3sdk"
             ],
             "build-options": {
                 "cxxflags": "-I/app/extensions/Plugins/Geonkick/include",
@@ -64,14 +64,19 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/free-sm/geonkick/archive/refs/tags/v2.10.0.tar.gz",
-                    "sha256": "cb63e2b81a6e5b45285861fc1a46f03959d6a33f9e3b1c7e7982f6ec4d9f0254"
+                    "url": "https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v3.4.0.tar.gz",
+                    "sha256": "bc55d34b66f310ee9f1df5fcc2b501038f794c325ce9271825250bebf27eb95f"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/Geonkick-Synthesizer/vst3sdk.git",
+                    "commit": "71876a22ff2ff21d490bc5285968808dabdfb2fb",
+                    "dest": "vst3sdk"
                 },
                 {
                     "type": "patch",
                     "paths": [
-                        "patches/geonkick-build-fix.patch",
-                        "patches/geonkick-vst3-build-fix.patch"
+                        "patches/geonkick-build-fix.patch"
                     ]
                 },
                 {
