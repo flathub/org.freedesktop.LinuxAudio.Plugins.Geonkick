@@ -1,7 +1,7 @@
-diff --git a/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake b/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake
+diff --git a/vst3sdk/cmake/modules/SMTG_PlatformToolset.cmake b/vst3sdk/cmake/modules/SMTG_PlatformToolset.cmake
 index 49ff3102..c4239bf2 100644
---- a/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake
-+++ b/3rdparty/vst3_sdk/cmake/modules/SMTG_PlatformToolset.cmake
+--- a/vst3sdk/cmake/modules/SMTG_PlatformToolset.cmake
++++ b/vst3sdk/cmake/modules/SMTG_PlatformToolset.cmake
 @@ -60,7 +60,7 @@ macro(smtg_setup_platform_toolset)
                      set(CMAKE_ANDROID_STL_TYPE c++_static)
                      link_libraries(dl)
@@ -11,47 +11,48 @@ index 49ff3102..c4239bf2 100644
                  endif(ANDROID)
              endif(SMTG_MAC)
          endif(XCODE)
-diff --git a/plugin/lv2/CMakeLists.txt b/plugin/lv2/CMakeLists.txt
-index 55c58ce6..0d1dc617 100644
---- a/plugin/lv2/CMakeLists.txt
-+++ b/plugin/lv2/CMakeLists.txt
-@@ -7,7 +7,6 @@ add_library(geonkick_lv2 SHARED
+diff --git a/src/plugin/lv2/CMakeLists.txt b/src/plugin/lv2/CMakeLists.txt
+index a651fdd..e834389 100644
+--- a/src/plugin/lv2/CMakeLists.txt
++++ b/src/plugin/lv2/CMakeLists.txt
+@@ -38,7 +38,6 @@ if (CMAKE_SYSTEM_NAME MATCHES Windows)
+       "-static-libstdc++"
+       "-static-libgcc")
+ else()
+-    target_link_libraries(geonkick_lv2 PRIVATE "-lstdc++fs")
+     target_link_libraries(geonkick_lv2 PRIVATE "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ endif()
  
- set_target_properties(geonkick_lv2 PROPERTIES PREFIX "")
- target_link_libraries(geonkick_lv2  geonkick_common api_plugin redkite)
--target_link_libraries(geonkick_lv2 "-lstdc++fs")
- target_link_libraries(geonkick_lv2 "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
- add_dependencies(geonkick_lv2 api_plugin)
- add_dependencies(geonkick_lv2 redkite)
-@@ -19,7 +18,6 @@ if (GKICK_PLUGIN)
-     ${GKICK_LV2_SOURCES})
-   set_target_properties(geonkick_single_lv2 PROPERTIES PREFIX "")
-   target_link_libraries(geonkick_single_lv2  geonkick_common_single api_plugin_single redkite)
--  target_link_libraries(geonkick_single_lv2 "-lstdc++fs")
-   target_link_libraries(geonkick_single_lv2 "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
-   add_dependencies(geonkick_single_lv2 api_plugin_single)
-   target_compile_options(geonkick_single_lv2 PUBLIC ${GKICK_API_PLUGIN_SINGLE_FLAGS})
-diff --git a/plugin/vst/CMakeLists.txt b/plugin/vst/CMakeLists.txt
-index 222fe9d6..3fc4ae33 100644
---- a/plugin/vst/CMakeLists.txt
-+++ b/plugin/vst/CMakeLists.txt
-@@ -32,7 +32,6 @@ set_target_properties(${target} PROPERTIES OUTPUT_NAME "Geonkick")
- set_target_properties(${target} PROPERTIES SUFFIX ".so")
+@@ -82,7 +81,6 @@ if (CMAKE_SYSTEM_NAME MATCHES Windows)
+       "-static-libstdc++"
+       "-static-libgcc")
+ else()
+-  target_link_libraries(geonkick_single_lv2 PRIVATE "-lstdc++fs")
+   target_link_libraries(geonkick_single_lv2 PRIVATE "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ endif()
  
- target_link_libraries(${target} PRIVATE geonkick_common api_plugin redkite)
--target_link_libraries(${target} PRIVATE "-lstdc++fs")
- target_link_libraries(${target} PRIVATE base sdk sdk_common pluginterfaces)
- target_link_libraries(${target} PRIVATE "-lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
- target_link_libraries(${target} PRIVATE "-Wl,--no-undefined")
-diff --git a/standalone/CMakeLists.txt b/standalone/CMakeLists.txt
-index 6bc75c94..ea9af846 100644
---- a/standalone/CMakeLists.txt
-+++ b/standalone/CMakeLists.txt
-@@ -8,7 +8,6 @@ add_executable(geonkick
- add_dependencies(geonkick api_standalone)
- add_dependencies(geonkick redkite)
- target_link_libraries(geonkick  geonkick_common api_standalone redkite)
--target_link_libraries(geonkick "-lstdc++fs")
- target_link_libraries(geonkick "-lX11 -ljack -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+diff --git a/src/plugin/vst/CMakeLists.txt b/src/plugin/vst/CMakeLists.txt
+index ba72ae8..26eb377 100755
+--- a/src/plugin/vst/CMakeLists.txt
++++ b/src/plugin/vst/CMakeLists.txt
+@@ -80,7 +80,7 @@ target_link_libraries(${target} PRIVATE
+       "-static-libgcc"
+       )
+ else()
+-      target_link_libraries(${target} PRIVATE "-lstdc++ -lstdc++fs -lsndfile -lcairo -lm -lpthread")
++      target_link_libraries(${target} PRIVATE "-lstdc++ -lsndfile -lcairo -lm -lpthread")
+ endif()
  
- install(TARGETS geonkick DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ add_dependencies(${target} geonkick_common)
+diff --git a/src/standalone/CMakeLists.txt b/src/standalone/CMakeLists.txt
+index df8b59c..54aece4 100755
+--- a/src/standalone/CMakeLists.txt
++++ b/src/standalone/CMakeLists.txt
+@@ -11,7 +11,6 @@ target_link_libraries(geonkick  geonkick_common api_standalone redkite)
+ if (CMAKE_SYSTEM_NAME MATCHES Windows)
+     target_link_libraries(geonkick "-mwindows -lstdc++ -lstdc++fs -lsndfile -lm -lpthread")
+ else()
+-    target_link_libraries(geonkick "-lstdc++fs")
+     target_link_libraries(geonkick "-lX11 -ljack -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ endif()
+ 
