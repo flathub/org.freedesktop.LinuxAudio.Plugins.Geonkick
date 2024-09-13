@@ -1,11 +1,10 @@
 {
     "id": "org.freedesktop.LinuxAudio.Plugins.Geonkick",
-    "branch": "23.08",
+    "branch": "24.08",
     "runtime": "org.freedesktop.LinuxAudio.BaseExtension",
     "runtime-version": "stable",
-    "sdk": "org.freedesktop.Sdk//23.08",
+    "sdk": "org.freedesktop.Sdk//24.08",
     "build-extension": true,
-    "appstream-compose": false,
     "build-options": {
         "prepend-path": "/app/extensions/Plugins/Geonkick/bin",
         "prepend-pkg-config-path": "/app/extensions/Plugins/Geonkick/lib/pkgconfig",
@@ -36,6 +35,10 @@
                     "type": "archive",
                     "url": "http://mirrors.kodi.tv/build-deps/sources/rapidjson-1.1.0.tar.gz",
                     "sha256": "bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/rapidjson-gcc14.patch"
                 }
             ]
         },
@@ -58,7 +61,6 @@
                 "strip ${FLATPAK_DEST}/lv2/*.lv2/*.so",
                 "strip ${FLATPAK_DEST}/vst3/*.vst3/Contents/*-linux/*.so",
                 "install -Dm644 ../org.freedesktop.LinuxAudio.Plugins.Geonkick.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
-                "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}",
                 "install -Dm644 -t $FLATPAK_DEST/share/licenses/geonkick ../LICENSE"
             ],
             "sources": [
