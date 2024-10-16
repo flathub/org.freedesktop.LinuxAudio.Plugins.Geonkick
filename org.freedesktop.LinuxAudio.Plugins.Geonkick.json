@@ -66,8 +66,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v3.4.0.tar.gz",
-                    "sha256": "bc55d34b66f310ee9f1df5fcc2b501038f794c325ce9271825250bebf27eb95f"
+                    "url": "https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v3.5.0.tar.gz",
+                    "sha256": "b40724171e1e6c9809fd0c461179a77c32113b64d0dd3eba9a5d88d7af09bb38"
                 },
                 {
                     "type": "git",
