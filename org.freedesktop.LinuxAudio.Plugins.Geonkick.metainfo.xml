@@ -8,6 +8,7 @@
   <project_license>GPL-3.0</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>hub_AT_figuiere.net</update_contact>
+  <developer_name>Geonkick Developers</developer_name>
   <description>
     <p>
       Geonkick is a synthesizer capable of producing various
@@ -16,7 +17,12 @@
     </p>
   </description>
   <releases>
-    <release date="2024-12-11" version="3.5.1" />
+    <release date="2025-01-27" version="3.5.2">
+      <url>https://github.com/Geonkick-Synthesizer/geonkick/releases/tag/v3.5.2</url>
+    </release>
+    <release date="2024-12-11" version="3.5.1">
+      <url>https://github.com/Geonkick-Synthesizer/geonkick/releases/tag/v3.5.1</url>
+    </release>
     <release date="2024-10-16" version="3.5.0">
       <url>https://github.com/Geonkick-Synthesizer/geonkick/releases/tag/v3.5.0</url>
     </release>
