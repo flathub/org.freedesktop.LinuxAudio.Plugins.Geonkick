@@ -17,6 +17,9 @@
     </p>
   </description>
   <releases>
+    <release date="2025-07-03" version="3.6.0">
+      <url>https://github.com/Geonkick-Synthesizer/geonkick/releases/tag/v3.6.0</url>
+    </release>
     <release date="2025-01-27" version="3.5.2">
       <url>https://github.com/Geonkick-Synthesizer/geonkick/releases/tag/v3.5.2</url>
     </release>
