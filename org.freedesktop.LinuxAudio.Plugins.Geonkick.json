@@ -71,8 +71,9 @@
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/Geonkick-Synthesizer/vst3sdk.git",
-                    "commit": "71876a22ff2ff21d490bc5285968808dabdfb2fb",
+                    "url": "https://github.com/steinbergmedia/vst3sdk.git",
+                    "tag": "v3.7.9_build_61",
+                    "commit": "dfff2e399c1a638bd7f5e334440a61e7262eed3f",
                     "dest": "vst3sdk"
                 },
                 {
