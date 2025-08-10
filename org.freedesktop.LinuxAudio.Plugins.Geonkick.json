@@ -12,7 +12,9 @@
     },
     "cleanup": [
         "/lib/lv2",
-        "/lib/libGLU*"
+        "/lib/libGLU*",
+        "/share/mime",
+        "/share/icons"
     ],
     "modules": [
         "shared-modules/linux-audio/lv2.json",
@@ -66,8 +68,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v3.6.1.tar.gz",
-                    "sha256": "c59f4414d867d6a7a2de505c77cc3d3c6d1d7e394d9eebdd09a03d1181eb7c5a"
+                    "url": "https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v3.6.2.tar.gz",
+                    "sha256": "4c60db59f52320916d2bb69dc59c81387052cb3b2a2a90f7504f21ccd6097c20"
                 },
                 {
                     "type": "git",
