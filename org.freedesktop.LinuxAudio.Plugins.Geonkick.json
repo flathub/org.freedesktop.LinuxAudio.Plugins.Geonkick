@@ -1,9 +1,9 @@
 {
     "id": "org.freedesktop.LinuxAudio.Plugins.Geonkick",
-    "branch": "24.08",
+    "branch": "25.08",
     "runtime": "org.freedesktop.LinuxAudio.BaseExtension",
     "runtime-version": "stable",
-    "sdk": "org.freedesktop.Sdk//24.08",
+    "sdk": "org.freedesktop.Sdk//25.08",
     "build-extension": true,
     "build-options": {
         "prepend-path": "/app/extensions/Plugins/Geonkick/bin",
@@ -22,6 +22,7 @@
             "name": "rapidjson",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                 "-DRAPIDJSON_BUILD_DOC=OFF",
                 "-DRAPIDJSON_BUILD_EXAMPLES=OFF",
                 "-DRAPIDJSON_BUILD_TESTS=OFF",
