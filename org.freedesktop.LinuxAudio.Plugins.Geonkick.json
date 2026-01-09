@@ -36,7 +36,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://mirrors.kodi.tv/build-deps/sources/rapidjson-1.1.0.tar.gz",
+                    "url": "https://github.com/miloyip/rapidjson/archive/v1.1.0.tar.gz",
                     "sha256": "bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e"
                 },
                 {
@@ -69,8 +69,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v3.6.2.tar.gz",
-                    "sha256": "4c60db59f52320916d2bb69dc59c81387052cb3b2a2a90f7504f21ccd6097c20"
+                    "url": "https://github.com/quamplex/geonkick/archive/refs/tags/v3.7.0.tar.gz",
+                    "sha256": "8bdcbe6de17e53e3d3ac52c47ee76acefe9ef3ca0d5080728f95362f054acadc"
                 },
                 {
                     "type": "git",
