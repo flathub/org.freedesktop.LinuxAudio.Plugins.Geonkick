@@ -17,6 +17,9 @@
     </p>
   </description>
   <releases>
+    <release date="2026-10-02" version="3.8.0">
+      <url>https://github.com/quamplex/geonkick/releases/tag/v3.8.0</url>
+    </release>
     <release date="2026-01-02" version="3.7.0">
       <url>https://github.com/quamplex/geonkick/releases/tag/v3.7.0</url>
     </release>
