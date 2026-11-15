@@ -68,8 +68,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/quamplex/geonkick/archive/refs/tags/v3.9.0.tar.gz",
-                    "sha256": "57aa7091a7b90f7c649b1abc932dd9e90ced9633beaf60f5165e137ddf50973f"
+                    "url": "https://github.com/quamplex/geonkick/archive/refs/tags/v3.9.1.tar.gz",
+                    "sha256": "e5d564d9492717e5938c9e3baf1cd47f7322af84ba7f8c21e78c95bd5e9842df"
                 },
                 {
                     "type": "git",
